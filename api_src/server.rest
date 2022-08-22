@@ -1,0 +1,10 @@
+### Get page
+GET http://localhost:3000/
+
+### Get all objects
+GET http://localhost:3000/api
+
+### Create new object
+POST http://localhost:3000/api
+
+"name": "Gorgen"
