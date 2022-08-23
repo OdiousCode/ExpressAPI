@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Natural Selection",
+        "price": 30,
+        "genre": "FPS",
+        "id": 0
+    },
+    {
+        "title": "Starcraft",
+        "price": 5,
+        "genre": "RTS",
+        "id": 1
+    },
+    {
+        "title": "Pathfinder: Kingmaker",
+        "price": 20,
+        "genre": "RPG",
+        "id": 2
+    }
+]
