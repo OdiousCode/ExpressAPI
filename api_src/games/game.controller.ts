@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
+import { getGames } from "./gamefileInterface";
 
 export const getAllGames = async (req: Request, res: Response) => {
 //   throw new Error("Ops...");
-  res.status(200).json([]);
+    const gamesList = await getGames();
+  res.status(200).json(gamesList);
 };
 
 export const createGame = (req: Request, res: Response) => {

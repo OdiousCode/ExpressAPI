@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllGames, getById, add, removeById, update } from './fileInterface';
+import { getGames, getById, add, removeById, update } from '../games/fileInterface';
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.get("/api", async (req, res) => {
     res.json("Hello World");
-    const gamesList = await getAllGames()
+    const gamesList = await getGames()
     console.log(gamesList);
 });
 app.get("/api/:id", async (req, res) => {
