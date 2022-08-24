@@ -1,28 +1,19 @@
-import express from 'express';
-import { getAllGames } from './fileInterface';
+import express from "express";
+require("express-async-errors");
 
-// const run = async () => {
-//     const gamesList = await getAllGames();
-//     console.log(gamesList);
-// }
+import { errorHandler, logger, notFoundHandler } from "./middlewares";
+import gameRouter from "./games/game.router";
 
-// run();
+
 const app = express();
 
 app.use(express.json());
+app.use(logger);
 
-app.use(express.static('public'));
+// Add more routers when needed
+app.use("/api/games", gameRouter);
 
-app.get("/api", async (req, res) => {
-    res.json("Hello World");
-    const gamesList = await getAllGames()
-    console.log(gamesList);
-});
+app.use(notFoundHandler);
+app.use(errorHandler);
 
-app.post("/api", (req, res) => {
-    const data = req.body;
-    res.status(204).json(data);
-});
-
-
-app.listen(3000, () => console.log('Server is running on: http://localhost:3000'));
+app.listen(3000, () => console.log("Running on: http://localhost:3000"));

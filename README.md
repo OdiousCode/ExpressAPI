@@ -1,3 +1,5 @@
+Till en början valde jag att följa en guide på youtube, som använde sig av en statisk JSON fil för data. Kändes halvbekant och bra att veta hur det fungerar tänkte jag. Så tänkte jag att man kan skriva/läsa filen genom API't. Men slopade denna idén sedan för att använda mig av API't direkt bara, var lärorikt dock!
+
 # ExpressAPI
 Express/typescript simple CRUD API
 
