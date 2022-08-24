@@ -1,0 +1,17 @@
+### Get page
+GET http://localhost:3000/
+
+### Get all objects
+GET http://localhost:3000/api
+
+### Get specific object
+GET http://localhost:3000/api/0
+
+### Create new object
+POST http://localhost:3000/api
+
+### Remove Specific object
+POST http://localhost:3000/api/4
+
+### Update specific object
+POST http://localhost:3000/api/update

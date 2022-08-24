@@ -1,0 +1,27 @@
+### GET /
+GET http://localhost:3000/api/games
+
+### Craete a new game
+POST http://localhost:3000/api/games
+Content-Type: application/json
+
+{
+    "title": "Solitaire", 
+    "price": 1, 
+    "genre": "Cardgame", 
+    "id": 4
+}
+
+### Delete game
+DELETE http://localhost:3000/api/games/4
+
+### Update game
+PUT http://localhost:3000/api/games/4
+Content-Type: application/json
+
+{
+    "title": "Solitaire modified",
+    "price": 2,
+    "genre": "Cardgame",
+    "id": 4
+}
