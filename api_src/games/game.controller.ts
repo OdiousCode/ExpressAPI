@@ -1,23 +1,22 @@
 import { Request, Response } from "express";
-import { getGames } from "./gamefileInterface";
+import { add, getGames, removeById } from "./gamefileInterface";
 
 export const getAllGames = async (req: Request, res: Response) => {
-//   throw new Error("Ops...");
-    const gamesList = await getGames();
+  const gamesList = await getGames();
   res.status(200).json(gamesList);
 };
 
-export const createGame = (req: Request, res: Response) => {
-  // TODO: create post
-  res.status(201).json({});
+export const createGame = async (req: Request, res: Response) => {
+  await add(req.body);
+  res.status(201).json();
 };
 
-export const deleteGame = (req: Request, res: Response) => {
-  // TODO: delete post
+export const deleteGame = async (req: Request, res: Response) => {
+  await removeById(req.params.id);
   res.status(204).json(null);
 };
 
-export const updateGame =(req: Request, res: Response) => {
-    // TODO: update game
-    res.status(200).json([]);
+export const updateGame = (req: Request, res: Response) => {
+  // TODO: update game
+  res.status(200).json([]);
 }

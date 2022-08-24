@@ -9,7 +9,7 @@ export const getGames = async(): Promise<Game[]> => {
     return JSON.parse(buffer)
 }
 
-export const getById = async(id:number):Promise<Game> => {
+export const getById = async(id:string):Promise<Game> => {
     const gamesList = await getGames();
     const game = gamesList.find(game => game.id ===id);
     if(game){
@@ -25,7 +25,7 @@ export const add = async(game: Game) => {
     await writeFile('./api_src/games/gamelist.json', JSON.stringify([...gamesList, game]))
 }
 
-export const removeById = async(id:number) => {
+export const removeById = async(id:string) => {
     const gamesList = await getGames();
     const games = gamesList.filter(game => game.id !== id);
     await writeFile('./api_src/games/gamelist.json', JSON.stringify(games))
