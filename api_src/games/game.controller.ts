@@ -17,7 +17,6 @@ export const deleteGame = async (req: Request, res: Response) => {
 };
 
 export const updateGame = async (req: Request, res: Response) => {
-  // TODO: update game
   console.log(req.body)
   await updateGameById(req.body)
   res.status(200).json([]);

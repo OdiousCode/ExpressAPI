@@ -5,5 +5,4 @@ export interface Game {
     genre: string;
 }
 
-// Temp database
 export const posts: Game[] = [];
