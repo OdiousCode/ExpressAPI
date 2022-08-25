@@ -1,7 +1,7 @@
 ### GET /
 GET http://localhost:3000/api/games
 
-### Craete a new game
+### Add a new game
 POST http://localhost:3000/api/games
 Content-Type: application/json
 
@@ -12,11 +12,11 @@ Content-Type: application/json
     "id": "abc"
 }
 
-### Delete game
+### Delete specified game by id
 DELETE http://localhost:3000/api/games/1
 
-### Update game
-PUT http://localhost:3000/api/games/4
+### Update specified game by id
+PUT http://localhost:3000/api/games/abc
 Content-Type: application/json
 
 {

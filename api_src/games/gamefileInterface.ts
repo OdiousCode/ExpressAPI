@@ -31,7 +31,7 @@ export const removeById = async(id:string) => {
     await writeFile('./api_src/games/gamelist.json', JSON.stringify(games))
 }
 
-export const update = async(game: Partial<Game>) => {
+export const updateGameById = async(game: Partial<Game>) => {
     if(!game.id) {
         throw new Error('You need to pass an ID')
     }
