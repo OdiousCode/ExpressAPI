@@ -19,7 +19,7 @@ export const getById = async(id:string):Promise<Game> => {
     }
 }
 
-export const add = async(game: Game) => {
+export const addGame = async(game: Game) => {
     const gamesList = await getGames();
 
     await writeFile('./api_src/games/gamelist.json', JSON.stringify([...gamesList, game]))
@@ -38,5 +38,5 @@ export const updateGameById = async(game: Partial<Game>) => {
     const gameToUpdate = await getById(game.id);
     const updatedGame = {...gameToUpdate, ...game}
     await removeById(game.id);
-    await add(updatedGame);
+    await addGame(updatedGame);
 }

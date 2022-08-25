@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { add, getGames, removeById, updateGameById } from "./gamefileInterface";
+import { addGame, getGames, removeById, updateGameById } from "./gamefileInterface";
 
 export const getAllGames = async (req: Request, res: Response) => {
   const gamesList = await getGames();
@@ -7,7 +7,7 @@ export const getAllGames = async (req: Request, res: Response) => {
 };
 
 export const createGame = async (req: Request, res: Response) => {
-  await add(req.body);
+  await addGame(req.body);
   res.status(201).json();
 };
 
