@@ -11,6 +11,7 @@ export const isLoggedIn = (req: Request, res: Response, next: NextFunction) => {
 
 export const logger = (req: Request, res: Response, next: NextFunction) => {
   console.log(req.method, req.path);
+  console.log(req.body);
   next();
 };
 
